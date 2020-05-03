@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="stylesheet" th:href="@{CSS/styles.css}" />
+<title>Ingreso de producto</title>
+</head>
+<body>
+	<h1>Ingreso de nuevo alumno</h1>
+	<form action="#" th:action="@{/producto}" th:object="${producto}" method="post">
+		<div class="container">
+			<div class="code-group">
+				<label>Codigo:</label> <input type="number" th:field="*{codigo}" > 
+				<span th:errors="*{codigo}" style="color: #FF0000"/>
+			</div>
+			<div class="name-group">
+				<label>Nombre:</label> <input type="text" th:field="*{nombreProducto}">
+				<span th:errors="*{nombreProducto}" style="color: #FF0000"/>
+			</div>
+			<div class="brand-group">
+				<label>Marca:</label> <input type="text" th:field="*{marca}"> 
+				<span th:errors="*{marca}" style="color: #FF0000"/>
+			</div>
+			<div class="description-group">
+				<label>Descripcion</label>
+				<textarea th:field="*{descripcion}" rows="2" cols="10">Descripcion:</textarea>
+				<span th:errors="*{descripcion}" style="color: #FF0000"/>
+			</div>
+			<div class="brand-group">
+				<label>Existencias: </label> <input type="number" th:field="*{existencias}"/> 
+				<span th:errors="*{existencias}" style="color: #FF0000"/>
+			</div>
+			<div class="date-group">
+				<label>Fecha de ingreso:</label> <input type="date" th:field="*{fecha}"/> 
+				<span th:errors="*{fecha}" style="color: #FF0000"/>
+			</div>
+			<div class="send-button">
+				<input type="submit" value="Guardar alumno" /> <input type="reset" value="Borrar todos los campos"/>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
